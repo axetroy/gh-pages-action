@@ -65,7 +65,7 @@ if [ $REMOTE ]; then
 fi
 
 if [ $USER ]; then
-    command="$command --user $USER"
+    command="$command --user \"$USER\""
 fi
 
 if [ $REMOVE ]; then
