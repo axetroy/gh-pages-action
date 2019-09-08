@@ -1,5 +1,7 @@
 #!/bin/sh
 
+set -e
+
 command=gh-pages
 
 if [ ! -n "$GITHUB_TOKEN" ]; then
@@ -14,63 +16,63 @@ else
     command+= --dist $DIST
 fi
 
-if [-n "$BRANCH" ]; then
+if [ $BRANCH ]; then
     command+= --branch $BRANCH
 fi
 
-if [-n "$SRC" ]; then
+if [ $SRC ]; then
     command+= --src $SRC
 fi
 
-if [-n "$DEST" ]; then
+if [ $DEST ]; then
     command+= --dest $DEST
 fi
 
-if [-n "$ADD" ]; then
+if [ $ADD ]; then
     command+= --add
 fi
 
-if [ -n "$SILENT" ]; then
+if [ $SILENT ]; then
     command+= --silent
 fi
 
-if [ -n "$MESSAGE" ]; then
+if [ $MESSAGE ]; then
     command+= --message $MESSAGE
 fi
 
-if [ -n "$TAG" ]; then
+if [ $TAG ]; then
     command+= --tag $TAG
 fi
 
-if [ -n "$GIT" ]; then
+if [ $GIT ]; then
     command+= --git $GIT
 fi
 
-if [ -n "$DOTFILES" ]; then
+if [ $DOTFILES ]; then
     command+= --dotfiles
 fi
 
-if [ -n "$REPO" ]; then
+if [ $REPO ]; then
     command+= --repo $REPO
 fi
 
-if [ -n "$DEPTH" ]; then
+if [ $DEPTH ]; then
     command+= --repo $DEPTH
 fi
 
-if [ -n "$REMOTE" ]; then
+if [ $REMOTE ]; then
     command+= --remote $REMOTE
 fi
 
-if [ -n "$USER" ]; then
+if [ $USER ]; then
     command+= --user $USER
 fi
 
-if [ -n "$REMOVE" ]; then
+if [ $REMOVE ]; then
     command+= --remove $REMOVE
 fi
 
-if [ -n "$NO_PUSH" ]; then
+if [ $NO_PUSH ]; then
     command+= --no-push
 fi
 
