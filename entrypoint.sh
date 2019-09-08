@@ -53,7 +53,7 @@ if [ "$DOTFILES" ]; then
 fi
 
 if [ "$REPO" ]; then
-    command="$command --repo $REPO"
+    command="$command --repo \"$REPO\""
 fi
 
 if [ "$DEPTH" ]; then
@@ -65,7 +65,7 @@ if [ "$REMOTE" ]; then
 fi
 
 if [ "$USER" ]; then
-    command="$command --user $USER"
+    command="$command --user \"$USER\""
 fi
 
 if [ "$REMOVE" ]; then
