@@ -13,7 +13,7 @@ if [ ! -n "$DIST" ]; then
     echo "You need to supply DIST environmental variable"
     exit 1
 else
-    command= "$command --dist $DIST"
+    command="$command --dist $DIST"
 fi
 
 if [ $BRANCH ]; then
@@ -75,6 +75,8 @@ fi
 if [ $NO_PUSH ]; then
     command="$command --no-push"
 fi
+
+echo "run command `$command`"
 
 sh -c "${command}"
 retval=$?
