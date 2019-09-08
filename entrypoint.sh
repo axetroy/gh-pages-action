@@ -13,67 +13,67 @@ if [ ! -n "$DIST" ]; then
     echo "You need to supply DIST environmental variable"
     exit 1
 else
-    command+= --dist $DIST
+    command= "$command --dist $DIST"
 fi
 
 if [ $BRANCH ]; then
-    command+= --branch $BRANCH
+    command="$command --branch $BRANCH"
 fi
 
 if [ $SRC ]; then
-    command+= --src $SRC
+    command="$command --src $SRC"
 fi
 
 if [ $DEST ]; then
-    command+= --dest $DEST
+    command="$command --dest $DEST"
 fi
 
 if [ $ADD ]; then
-    command+= --add
+    command="$command --add"
 fi
 
 if [ $SILENT ]; then
-    command+= --silent
+    command="$command --silent"
 fi
 
 if [ $MESSAGE ]; then
-    command+= --message $MESSAGE
+    command="$command --message $MESSAGE"
 fi
 
 if [ $TAG ]; then
-    command+= --tag $TAG
+    command="$command --tag $TAG"
 fi
 
 if [ $GIT ]; then
-    command+= --git $GIT
+    command="$command --git $GIT"
 fi
 
 if [ $DOTFILES ]; then
-    command+= --dotfiles
+    command="$command --dotfiles"
 fi
 
 if [ $REPO ]; then
-    command+= --repo $REPO
+    command="$command --repo $REPO"
 fi
 
 if [ $DEPTH ]; then
-    command+= --repo $DEPTH
+    command="$command --repo $DEPTH"
 fi
 
 if [ $REMOTE ]; then
-    command+= --remote $REMOTE
+    command="$command --remote $REMOTE"
 fi
 
 if [ $USER ]; then
-    command+= --user $USER
+    command="$command --user $USER"
 fi
 
 if [ $REMOVE ]; then
-    command+= --remove $REMOVE
+    command="$command --remove $REMOVE"
 fi
 
 if [ $NO_PUSH ]; then
-    command+= --no-push
+    command="$command --no-push"
 fi
 
 sh -c "${command}"
