@@ -24,9 +24,9 @@ fi
 if [ "$PRIVATE_KEY" ]; then
     mkdir -p ~/.ssh
     echo "$PRIVATE_KEY" > ~/.ssh/id_rsa
-    ssh-keyscan github.com >> ~/.ssh/known_hosts
-    ssh -T git@github.com
+    ssh-keyscan "$KNOWN_HOSTS" >> ~/.ssh/known_hosts
     ls -l ~/.ssh
+    ssh -T git@github.com
 fi
 
 if [ "$BRANCH" ]; then
