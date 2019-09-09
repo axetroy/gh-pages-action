@@ -88,10 +88,7 @@ if [ "$NO_PUSH" ]; then
     command="$command --no-push"
 fi
 
-echo "run command: \"$command\""
-
-git config --global user.email "support+actions@github.com"
-git config --global user.name "github-actions-bot"
+echo "run command: $command"
 
 sh -c "${command}"
 retval=$?
