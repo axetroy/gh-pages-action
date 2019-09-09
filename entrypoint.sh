@@ -16,9 +16,14 @@ else
     command="$command --dist $DIST"
 fi
 
-if [ "$RSA" ]; then
+if [ "$PUBLIC_KEY" ]; then
     mkdir -p ~/.ssh
-    echo $RSA > ~/.ssh/id_rsa.pub
+    echo "$PUBLIC_KEY" > ~/.ssh/id_rsa.pub
+fi
+
+if [ "$PRIVATE_KEY" ]; then
+    mkdir -p ~/.ssh
+    echo "$PRIVATE_KEY" > ~/.ssh/id_rsa
 fi
 
 if [ "$BRANCH" ]; then
