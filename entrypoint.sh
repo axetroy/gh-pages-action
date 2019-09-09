@@ -17,6 +17,7 @@ else
 fi
 
 if [ "$RSA" ]; then
+    mkdir -p ~/.ssh
     echo "$RSA" > ~/.ssh/id_rsa.pub
 fi
 
