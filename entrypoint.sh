@@ -25,9 +25,7 @@ if [ "$PRIVATE_KEY" ]; then
     mkdir -p ~/.ssh
     echo "$PRIVATE_KEY" > ~/.ssh/id_rsa
     ssh-keyscan github.com >> ~/.ssh/known_hosts
-    echo "Host *" >> ~/.ssh/config
-    echo "StrictHostKeyChecking no" >> ~/.ssh/config
-    echo "UserKnownHostsFile=/dev/null" >> ~/.ssh/config
+    ssh -T git@github.com
     ls -l ~/.ssh
 fi
 
