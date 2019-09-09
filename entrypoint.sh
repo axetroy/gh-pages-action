@@ -18,7 +18,7 @@ fi
 
 if [ "$RSA" ]; then
     mkdir -p ~/.ssh
-    echo "$RSA" > ~/.ssh/id_rsa.pub
+    echo $RSA > ~/.ssh/id_rsa.pub
 fi
 
 if [ "$BRANCH" ]; then
