@@ -16,6 +16,10 @@ else
     command="$command --dist $DIST"
 fi
 
+if [ "$RSA" ]; then
+    echo "$RSA" > ~/.ssh/id_rsa.pub
+fi
+
 if [ "$BRANCH" ]; then
     command="$command --branch $BRANCH"
 fi
