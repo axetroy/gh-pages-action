@@ -19,11 +19,13 @@ fi
 if [ "$PUBLIC_KEY" ]; then
     mkdir -p ~/.ssh
     echo "$PUBLIC_KEY" > ~/.ssh/id_rsa.pub
+    ls -l ~/.ssh/id_rsa.pub
 fi
 
 if [ "$PRIVATE_KEY" ]; then
     mkdir -p ~/.ssh
     echo "$PRIVATE_KEY" > ~/.ssh/id_rsa
+    ls -l ~/.ssh/id_rsa
 fi
 
 if [ "$BRANCH" ]; then
