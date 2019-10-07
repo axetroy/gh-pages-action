@@ -25,6 +25,11 @@ if [ "$PRIVATE_KEY" ]; then
     mkdir -p ~/.ssh
     echo "$PRIVATE_KEY" > ~/.ssh/id_rsa
     echo "$KNOWN_HOSTS" >> ~/.ssh/known_hosts
+
+    # set global username
+    git config --global user.name "$GIT_USERNAME"
+    git config --global user.email "$GIT_EMAIL"
+
     ls -l ~/.ssh
     ssh -T git@github.com
 fi
